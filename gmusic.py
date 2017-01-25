@@ -39,25 +39,12 @@ def demonstrate():
     print 'Successfully logged in.'
     print
 
-    # Get all of the users songs.
-    # library is a big list of dictionaries, each of which contains a single song.
-    print 'Loading library...',
-    library = api.get_all_songs()
-    print 'done.'
-
-    band_name = raw_input('Enter band name: ')
-
-    setlist_song_ids = {}
+    band_name = raw_input('Enter band name: ') 
+    setlist = []
     
     for song in setlistfm.get_setlist(band_name):
-        setlist_song_ids[song] = '1'
-   
-    for song in library:
-        try:
-            if setlist_song_ids[song['title']] == '1':
-                setlist_song_ids[song['title']] = song['id']
-        except:
-            pass
+        setlist.append(api.search(band_name + " " + song)['song_hits'][0]['track']['nid'])
+	        
 
     print "I'm going to make a new playlist and add the songs from"
     print "the setlist to is."
@@ -65,14 +52,14 @@ def demonstrate():
     playlist_name = band_name + "'s Last Setlist"
 
     # Like songs, playlists have unique ids.
-    # Google Music allows more than one playlist of the samQe name;
+    # Google Music allows more than one playlist of the same name;
     # these ids are necessary.
     playlist_id = api.create_playlist(playlist_name)
     print 'Made the playlist.'
     print
 
     # Now let's add the song to the playlist, using their ids:
-    api.add_songs_to_playlist(playlist_id, setlist_song_ids.values())
+    api.add_songs_to_playlist(playlist_id, setlist)
     print 'Added the song to the playlist.'
     print
 
