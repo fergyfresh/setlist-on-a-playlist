@@ -4,15 +4,15 @@ How to use:
 
 Clone this repo.
 
-`import gmusic_stuff`
+`git clone https://github.com/fergyfresh/setlist-on-a-playlist.git`
+`cd setlist-on-a-playlist`
+`source venv/bin/activate`
+`pip install requirements.txt`
+`python gmusic.py`
 
-`gmusic_stuff.demonstrate()`
-
-Put your google play log-in credentials in.
-
-Type in a band name.
-
-Have all of a bands songs in your library (only way it works for now)
-
-And watch a playlist get generated on your phone! If you have the lower
-auth enabled, which is dumb (but also the only way I could get it to work)`
+1. Put your google play log-in credentials in.
+2. Type in a band name.
+3. Grab a beer and then check your phone for a 
+4. Playlist get generated on your phone!
+5. ???
+6. Profit.
