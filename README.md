@@ -5,9 +5,13 @@ How to use:
 Clone this repo.
 
 `git clone https://github.com/fergyfresh/setlist-on-a-playlist.git`
+
 `cd setlist-on-a-playlist`
+
 `source venv/bin/activate`
+
 `pip install requirements.txt`
+
 `python gmusic.py`
 
 1. Put your google play log-in credentials in.
