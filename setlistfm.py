@@ -27,5 +27,4 @@ def get_setlist (band_name):
     songlist = [song_link.string for song_link in songlinks]
     return songlist
 
-test = get_setlist('the smith street band')
-    
+print(get_setlist('the smith street band'))    
